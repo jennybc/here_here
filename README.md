@@ -12,23 +12,22 @@ Ode to the here package
 TL;DR
 -----
 
-Install [here](https://krlmlr.github.io/here/).
+1.  Install [here](https://krlmlr.github.io/here/).
 
-``` r
-## install.packages(devtools)
-devtools::install_github("krlmlr/here")
-```
+    ``` r
+    install.packages("here")
+    ```
 
-Use it.
+2.  Use it.
 
-``` r
-library(here)
-here("data", "file_i_want.csv")
-```
+    ``` r
+    library(here)
+    here("data", "file_i_want.csv")
+    ```
 
 This works, regardless of where the associated source file lives inside your project. These paths will also "just work" during interactive development, without incessant fiddling with the working directory of your IDE's R process.
 
-`here::here()` works like `file.path()`, but where the path root is implicitly set to "the path to the top-level of my current project". See [The Fine Print](#the-fine-print) for the underlying heuristics. If they don't suit, use the more powerful package [rprojroot](https://krlmlr.github.io/rprojroot/) directly. Both [here](https://krlmlr.github.io/here/) and [rprojroot](https://krlmlr.github.io/rprojroot/) are written by [Kirill Müller](https://github.com/krlmlr) and rprojroot is already on CRAN.
+`here::here()` works like `file.path()`, but where the path root is implicitly set to "the path to the top-level of my current project". See [The Fine Print](#the-fine-print) for the underlying heuristics. If they don't suit, use the more powerful package [rprojroot](https://krlmlr.github.io/rprojroot/) directly. Both [here](https://krlmlr.github.io/here/) and [rprojroot](https://krlmlr.github.io/rprojroot/) are written by [Kirill Müller](https://github.com/krlmlr) and are available on CRAN.
 
 Admitting you have a problem
 ----------------------------
