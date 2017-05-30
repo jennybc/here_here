@@ -15,18 +15,18 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 
 ## TL;DR
 
-Install [here](https://krlmlr.github.io/here/).
+1. Install [here](https://krlmlr.github.io/here/).
 
-```{r eval = FALSE}
-install.packages("here")
-```
+    ```{r eval = FALSE}
+    install.packages("here")
+    ```
 
-Use it.
+2. Use it.
 
-```{r eval = FALSE}
-library(here)
-here("data", "file_i_want.csv")
-```
+    ```{r eval = FALSE}
+    library(here)
+    here("data", "file_i_want.csv")
+    ```
 
 This works, regardless of where the associated source file lives inside your project. These paths will also "just work" during interactive development, without incessant fiddling with the working directory of your IDE's R process.
 
