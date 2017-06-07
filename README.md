@@ -52,16 +52,16 @@ What does here think the top-level of current project is? The package displays t
 
 ``` r
 library(here)
-#> here() starts at /home/muelleki/git/R/here_here
+#> here() starts at /Users/jenny/rrr/here_here
 here()
-#> [1] "/home/muelleki/git/R/here_here"
+#> [1] "/Users/jenny/rrr/here_here"
 ```
 
 Build a path to something in a subdirectory and use it.
 
 ``` r
 here("one", "two", "awesome.txt")
-#> [1] "/home/muelleki/git/R/here_here/one/two/awesome.txt"
+#> [1] "/Users/jenny/rrr/here_here/one/two/awesome.txt"
 cat(readLines(here("one", "two", "awesome.txt")))
 #> OMG this is so awesome!
 ```
@@ -71,7 +71,7 @@ Don't try this at home, folks! But let me set working directory to a subdirector
 ``` r
 setwd(here("one"))
 getwd()
-#> [1] "/home/muelleki/git/R/here_here/one"
+#> [1] "/Users/jenny/rrr/here_here/one"
 cat(readLines(here("one", "two", "awesome.txt")))
 #> OMG this is so awesome!
 ```
@@ -90,4 +90,4 @@ Here are the criteria. The order doesn't really matter because all of them are c
 -   Is this a [projectile](http://projectile.readthedocs.io/en/latest/) project? Does it have a file named `.projectile`?
 -   Is this a checkout from a version control system? Does it have a directory named `.git` or `.svn`? Currently, only Git and Subversion are supported.
 
-If no criteria match, loading the package will fail. Use `set_here()` to create an empty `.here` file that will stop the search if none of the other criteria apply. `dr_here()` will attempt to explain why `here` decided the root location the way it did. See the [function reference](https://krlmlr.github.io/here/reference/here.html) for more detail.
+If no criteria match, the current working directory will be used as fallback. Use `set_here()` to create an empty `.here` file that will stop the search if none of the other criteria apply. `dr_here()` will attempt to explain why `here` decided the root location the way it did. See the [function reference](https://krlmlr.github.io/here/reference/here.html) for more detail.
