@@ -44,8 +44,10 @@ Do you:
     - This makes your script very fragile, hard-wired to exactly one time and place. As soon as you rename or move directories, it breaks. Or maybe you get a new computer? Or maybe someone else needs to run your code? We show a very accessible way to go cold turkey and eliminate the `setwd()` gotcha from your code.
   * Fanny around with working directory alot? During development and/or at run time? YOU CAN STOP DOING THAT TOO.
     - Classic problem presentation: Awkwardness around building paths and/or setting working directory in projects with subdirectories. Especially if you use R Markdown and knitr, which trips up alot of people with its default behavior of "working directory = directory where this file lives".  We show a very accessible way to specify paths in your project's `.R` and `.Rmd` files, regardless of where they live.
+    
+Read [my blog post "Project-oriented workflow"](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) for more about why `setwd()` is so problematic and often associated with other awkward workflow problems. Never fear: there are solutions!
 
-## Actual demonstration
+## Actual demonstration of `here::here()`
 
 I will let this code run.
 
