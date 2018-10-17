@@ -5,7 +5,7 @@
 
 ## TL;DR
 
-1.  Install [here](https://krlmlr.github.io/here/).
+1.  Install [here](https://github.com/r-lib/here).
     
     ``` r
     install.packages("here")
@@ -27,9 +27,9 @@ your IDE’s R process.
 implicitly set to “the path to the top-level of my current project”. See
 [The Fine Print](#the-fine-print) for the underlying heuristics. If they
 don’t suit, use the more powerful package
-[rprojroot](https://krlmlr.github.io/rprojroot/) directly. Both
-[here](https://krlmlr.github.io/here/) and
-[rprojroot](https://krlmlr.github.io/rprojroot/) are written by [Kirill
+[rprojroot](https://github.com/r-lib/rprojroot) directly. Both
+[here](https://github.com/r-lib/here) and
+[rprojroot](https://github.com/r-lib/rprojroot) are written by [Kirill
 Müller](https://github.com/krlmlr) and are available on CRAN.
 
 ## Admitting you have a problem
@@ -128,5 +128,5 @@ fallback. Use `set_here()` to create an empty `.here` file that will
 stop the search if none of the other criteria apply. `dr_here()` will
 attempt to explain why `here` decided the root location the way it did.
 See the [function
-reference](https://krlmlr.github.io/here/reference/here.html) for more
+reference](https://github.com/r-lib/here/blob/master/R/here.R) for more
 detail.
