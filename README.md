@@ -74,16 +74,16 @@ displays this on load or, at any time, you can just call `here()`.
 
 ``` r
 library(here)
-#> here() starts at /Users/amanda/Desktop/Projects/here_here
+#> here() starts at /Users/jenny/rrr/here_here
 here()
-#> [1] "/Users/amanda/Desktop/Projects/here_here"
+#> [1] "/Users/jenny/rrr/here_here"
 ```
 
 Build a path to something in a subdirectory and use it.
 
 ``` r
 here("one", "two", "awesome.txt")
-#> [1] "/Users/amanda/Desktop/Projects/here_here/one/two/awesome.txt"
+#> [1] "/Users/jenny/rrr/here_here/one/two/awesome.txt"
 cat(readLines(here("one", "two", "awesome.txt")))
 #> OMG this is so awesome!
 ```
@@ -95,7 +95,7 @@ the path to `awesome.txt`, still works.
 ``` r
 setwd(here("one"))
 getwd()
-#> [1] "/Users/amanda/Desktop/Projects/here_here/one"
+#> [1] "/Users/jenny/rrr/here_here/one"
 cat(readLines(here("one", "two", "awesome.txt")))
 #> OMG this is so awesome!
 ```
