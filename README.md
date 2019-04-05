@@ -27,9 +27,9 @@ your IDE’s R process.
 implicitly set to “the path to the top-level of my current project”. See
 [The Fine Print](#the-fine-print) for the underlying heuristics. If they
 don’t suit, use the more powerful package
-[rprojroot](https://krlmlr.github.io/rprojroot/) directly. Both
-[here](https://krlmlr.github.io/here/) and
-[rprojroot](https://krlmlr.github.io/rprojroot/) are written by [Kirill
+[rprojroot](https://github.com/r-lib/rprojroot) directly. Both
+[here]https://github.com/r-lib/here) and
+[rprojroot](https://github.com/r-lib/rprojroot) are written by [Kirill
 Müller](https://github.com/krlmlr) and are available on CRAN.
 
 ## Admitting you have a problem
