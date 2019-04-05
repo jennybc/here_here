@@ -28,7 +28,7 @@ implicitly set to “the path to the top-level of my current project”. See
 [The Fine Print](#the-fine-print) for the underlying heuristics. If they
 don’t suit, use the more powerful package
 [rprojroot](https://github.com/r-lib/rprojroot) directly. Both
-[here]https://github.com/r-lib/here) and
+[here](https://github.com/r-lib/here) and
 [rprojroot](https://github.com/r-lib/rprojroot) are written by [Kirill
 Müller](https://github.com/krlmlr) and are available on CRAN.
 
