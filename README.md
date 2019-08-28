@@ -1,14 +1,27 @@
 
+  - [Ode to the here package](#ode-to-the-here-package)
+      - [TL;DR](#tldr)
+      - [Admitting you have a problem](#admitting-you-have-a-problem)
+      - [Actual demonstration of
+        `here::here()`](#actual-demonstration-of-herehere)
+      - [The fine print](#the-fine-print)
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # Ode to the here package
 
 ## TL;DR
 
-1.  Install [here](https://krlmlr.github.io/here/).
+1.  Install [here](https://github.com/r-lib/here) from CRAN:
     
     ``` r
     install.packages("here")
+    ```
+    
+    or from GitHub:
+    
+    ``` r
+    devtools::install_github("r-lib/here")
     ```
 
 2.  Use it.
@@ -27,10 +40,10 @@ your IDE’s R process.
 implicitly set to “the path to the top-level of my current project”. See
 [The Fine Print](#the-fine-print) for the underlying heuristics. If they
 don’t suit, use the more powerful package
-[rprojroot](https://krlmlr.github.io/rprojroot/) directly. Both
-[here](https://krlmlr.github.io/here/) and
-[rprojroot](https://krlmlr.github.io/rprojroot/) are written by [Kirill
-Müller](https://github.com/krlmlr) and are available on CRAN.
+[rprojroot](https://devhub.io/repos/krlmlr-rprojroot) directly. Both
+[here](https://github.com/r-lib/here) and
+[rprojroot](https://devhub.io/repos/krlmlr-rprojroot) are written by
+[Kirill Müller](https://github.com/krlmlr) and are available on CRAN.
 
 ## Admitting you have a problem
 
@@ -40,22 +53,24 @@ Müller](https://github.com/krlmlr) and are available on CRAN.
 
 Mash-up of rage tweets by
 [@jennybc](https://twitter.com/JennyBryan/status/673240213313851393) and
-[@tpoi](https://twitter.com/tpoi/status/720340395901648897).
+~~[@tpoi](https://twitter.com/tpoi/status/720340395901648897)~~ (tweet
+no longer exists except in \#rstats folklore - see for example [Christie
+Bahlai](https://twitter.com/cbahlai/status/943537010769309696)).
 
 Do you:
 
-  - Have `setwd()` in your scripts? PLEASE STOP DOING THAT.
+  - have `setwd()` in your scripts? PLEASE STOP DOING THAT.
       - This makes your script very fragile, hard-wired to exactly one
         time and place. As soon as you rename or move directories, it
         breaks. Or maybe you get a new computer? Or maybe someone else
         needs to run your code? We show a very accessible way to go cold
         turkey and eliminate the `setwd()` gotcha from your code.
-  - Fanny around with working directory alot? During development and/or
+  - fanny around with working directory a lot? During development and/or
     at run time? YOU CAN STOP DOING THAT TOO.
       - Classic problem presentation: Awkwardness around building paths
         and/or setting working directory in projects with
         subdirectories. Especially if you use R Markdown and knitr,
-        which trips up alot of people with its default behavior of
+        which trips up a lot of people with its default behavior of
         “working directory = directory where this file lives”. We show
         a very accessible way to specify paths in your project’s `.R`
         and `.Rmd` files, regardless of where they live.
@@ -69,7 +84,7 @@ other awkward workflow problems. Never fear: there are solutions\!
 
 I will let this code run.
 
-What does here think the top-level of current project is? The package
+What does `here` think the top-level of current project is? The package
 displays this on load or, at any time, you can just call `here()`.
 
 ``` r
@@ -103,9 +118,9 @@ cat(readLines(here("one", "two", "awesome.txt")))
 ## The fine print
 
 `here::here()` figures out the top-level of your current project using
-some sane heuristics. It looks at working directory, checks a criterion
-and, if not satisfied, moves up to parent directory and checks again.
-Lather, rinse, repeat.
+some sane heuristics. It looks at the working directory, checks the
+criteria below and, if not satisfied, moves up to the parent directory
+and checks again. Lather, rinse, repeat.
 
 Here are the criteria. The order doesn’t really matter because all of
 them are checked for each directory before moving up to the parent
@@ -117,16 +132,15 @@ directory:
   - Is this an R package? Does it have a `DESCRIPTION` file?
   - Is this a [remake](https://github.com/richfitz/remake#readme)
     project? Does it have a file named `remake.yml`?
-  - Is this a [projectile](http://projectile.readthedocs.io/en/latest/)
+  - Is this a [projectile](https://projectile.readthedocs.io/en/latest/)
     project? Does it have a file named `.projectile`?
   - Is this a checkout from a version control system? Does it have a
     directory named `.git` or `.svn`? Currently, only Git and Subversion
     are supported.
 
-If no criteria match, the current working directory will be used as
+If no criterion matches, the current working directory will be used as
 fallback. Use `set_here()` to create an empty `.here` file that will
 stop the search if none of the other criteria apply. `dr_here()` will
 attempt to explain why `here` decided the root location the way it did.
-See the [function
-reference](https://krlmlr.github.io/here/reference/here.html) for more
-detail.
+See the [function reference](https://here.r-lib.org/reference/here.html)
+for more detail.
