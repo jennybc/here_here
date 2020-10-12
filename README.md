@@ -50,12 +50,12 @@ Do you:
         breaks. Or maybe you get a new computer? Or maybe someone else
         needs to run your code? We show a very accessible way to go cold
         turkey and eliminate the `setwd()` gotcha from your code.
-  - Fanny around with working directory alot? During development and/or
+  - Fanny around with working directory a lot? During development and/or
     at run time? YOU CAN STOP DOING THAT TOO.
       - Classic problem presentation: Awkwardness around building paths
         and/or setting working directory in projects with
         subdirectories. Especially if you use R Markdown and knitr,
-        which trips up alot of people with its default behavior of
+        which trips up a lot of people with its default behavior of
         “working directory = directory where this file lives”. We show
         a very accessible way to specify paths in your project’s `.R`
         and `.Rmd` files, regardless of where they live.
